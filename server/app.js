@@ -70,6 +70,17 @@ app.use('/api/*', (req, res) => {
   });
 });
 
+// Serve frontend static assets in production/local bundle
+const path = require('path');
+const fs = require('fs');
+const clientDistPath = path.join(__dirname, '../client/dist');
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+}
+
 // Centralized error handler
 app.use(errorHandler);
 
