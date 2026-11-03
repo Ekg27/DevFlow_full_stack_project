@@ -83,9 +83,9 @@ The database is pre-seeded with 3 demo accounts ready for evaluation:
 
 | User | Email | Password | Role in Demo Project |
 |---|---|---|---|
-| **Alice Johnson** | `alice@devflow.com` | `password123` | **Owner** (DevFlow Platform) |
-| **Bob Smith** | `bob@devflow.com` | `password123` | **Admin** (DevFlow Platform) / **Owner** (Mobile Redesign) |
-| **Charlie Davis** | `charlie@devflow.com` | `password123` | **Member** (DevFlow Platform) |
+| **Ekansh** | `Ekansh@devflow.com` | `password123` | **Owner** (DevFlow Platform) |
+| **Arnaav** | `Arnaav@devflow.com` | `password123` | **Admin** (DevFlow Platform) / **Owner** (Mobile Redesign) |
+| **Charlie Davis** | `member3@devflow.com` | `password123` | **Member** (DevFlow Platform) |
 
 *The login page also includes 1-click credential fill buttons for fast demonstration.*
 
