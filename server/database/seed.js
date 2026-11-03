@@ -43,15 +43,15 @@ async function seed() {
     'INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)'
   );
 
-  const alice = insertUser.run('Alice Johnson', 'alice@devflow.com', passwordHash);
-  const bob = insertUser.run('Bob Smith', 'bob@devflow.com', passwordHash);
-  const charlie = insertUser.run('Charlie Davis', 'charlie@devflow.com', passwordHash);
+  const ekansh = insertUser.run('Ekansh', 'ekansh@devflow.com', passwordHash);
+  const arnaav = insertUser.run('Arnaav', 'arnaav@devflow.com', passwordHash);
+  const member3 = insertUser.run('Member3', 'member3@devflow.com', passwordHash);
 
-  const aliceId = alice.lastInsertRowid;
-  const bobId = bob.lastInsertRowid;
-  const charlieId = charlie.lastInsertRowid;
+  const aliceId = ekansh.lastInsertRowid;
+  const bobId = arnaav.lastInsertRowid;
+  const charlieId = member3.lastInsertRowid;
 
-  console.log(`👤 Created users: Alice (${aliceId}), Bob (${bobId}), Charlie (${charlieId})`);
+  console.log(`👤 Created users: Ekansh (${aliceId}), Arnaav (${bobId}), Member3 (${charlieId})`);
 
   // ---------- PROJECTS ----------
   const insertProject = db.prepare(
@@ -84,12 +84,12 @@ async function seed() {
     'INSERT INTO project_members (project_id, user_id, role) VALUES (?, ?, ?)'
   );
 
-  // DevFlow Platform: Alice = Owner, Bob = Admin, Charlie = Member
+  // DevFlow Platform: Ekansh = Owner, Arnaav = Admin, Member3 = Member
   insertMember.run(proj1Id, aliceId, 'Owner');
   insertMember.run(proj1Id, bobId, 'Admin');
   insertMember.run(proj1Id, charlieId, 'Member');
 
-  // Mobile App Redesign: Bob = Owner, Alice = Member, Charlie = Admin
+  // Mobile App Redesign: Arnaav = Owner, Ekansh = Member, Member3 = Admin
   insertMember.run(proj2Id, bobId, 'Owner');
   insertMember.run(proj2Id, aliceId, 'Member');
   insertMember.run(proj2Id, charlieId, 'Admin');
@@ -142,8 +142,8 @@ async function seed() {
 
   // DevFlow Platform activities
   insertActivity.run(proj1Id, aliceId, 'Created project', 'Project "DevFlow Platform" was created');
-  insertActivity.run(proj1Id, aliceId, 'Added member', 'Bob Smith was added as Admin');
-  insertActivity.run(proj1Id, aliceId, 'Added member', 'Charlie Davis was added as Member');
+  insertActivity.run(proj1Id, aliceId, 'Added member', 'Arnaav was added as Admin');
+  insertActivity.run(proj1Id, aliceId, 'Added member', 'Member3 was added as Member');
   insertActivity.run(proj1Id, aliceId, 'Created task', 'Task "Set up project structure" was created');
   insertActivity.run(proj1Id, aliceId, 'Updated task status', 'Task "Set up project structure" moved to Done');
   insertActivity.run(proj1Id, bobId, 'Created task', 'Task "Design database schema" was created');
@@ -153,8 +153,8 @@ async function seed() {
 
   // Mobile App Redesign activities
   insertActivity.run(proj2Id, bobId, 'Created project', 'Project "Mobile App Redesign" was created');
-  insertActivity.run(proj2Id, bobId, 'Added member', 'Alice Johnson was added as Member');
-  insertActivity.run(proj2Id, bobId, 'Added member', 'Charlie Davis was added as Admin');
+  insertActivity.run(proj2Id, bobId, 'Added member', 'Ekansh was added as Member');
+  insertActivity.run(proj2Id, bobId, 'Added member', 'Member3 was added as Admin');
   insertActivity.run(proj2Id, charlieId, 'Updated task status', 'Task "User research & wireframes" moved to Done');
   insertActivity.run(proj2Id, charlieId, 'Created task', 'Task "Design system setup" was created');
 
@@ -165,9 +165,9 @@ async function seed() {
   console.log('='.repeat(50));
   console.log('  Demo Credentials');
   console.log('='.repeat(50));
-  console.log('  Alice Johnson  | alice@devflow.com   | password123');
-  console.log('  Bob Smith      | bob@devflow.com     | password123');
-  console.log('  Charlie Davis  | charlie@devflow.com | password123');
+  console.log('  Ekansh   | ekansh@devflow.com   | password123');
+  console.log('  Arnaav   | arnaav@devflow.com   | password123');
+  console.log('  Member3  | member3@devflow.com  | password123');
   console.log('='.repeat(50));
 }
 
